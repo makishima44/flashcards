@@ -1,0 +1,33 @@
+.button {
+  padding: 6px 28px;
+  height: 36px;
+  border-radius: 4px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
+}
+
+//-------------------primary-------------------------
+
+.primary {
+  background-color: var(--color-info-500);
+}
+
+.primary:focus {
+  border: 2px solid var(--color-info-700);
+}
+
+.primary:hover {
+  background-color: var(--color-info-300);
+}
+
+.primary:active {
+  background-color: var(--color-info-700);
+}
+
+.primary:disabled {
+  background-color: var(--color-info-900);
+}
+
+//-------------------secondary-------------------------
