@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./";
+import icon from "@/assets/icons/log-out.svg";
 
 const meta = {
   component: Button,
@@ -16,11 +17,33 @@ export const Primary: Story = {
 };
 
 export const PrimaryDisabled: Story = {
-  args: { children: "Primary Button Disabled", disabled: true, variant: "primary" },
+  args: { children: "Primary  Disabled", disabled: true, variant: "primary" },
+};
+
+export const PrimaryWithIcon: Story = {
+  args: {
+    children: "Primary With Icon",
+    disabled: false,
+    variant: "primary",
+    icon: <img src={icon} alt="Log Out" />,
+  },
 };
 
 export const Secondary: Story = {
   args: { children: "Secondary Button", disabled: false, variant: "secondary" },
+};
+
+export const SecondaryDisabled: Story = {
+  args: { children: "Secondary Disabled", disabled: true, variant: "secondary" },
+};
+
+export const SecondaryWithIcon: Story = {
+  args: {
+    children: "Secondary With Icon",
+    disabled: false,
+    variant: "secondary",
+    icon: <img src={icon} alt="Log Out" />,
+  },
 };
 
 export const FullWidth: Story = {
@@ -31,6 +54,7 @@ export const FullWidth: Story = {
     variant: "primary",
   },
 };
+
 export const AsLink: Story = {
   args: { as: "a", children: "Link that looks like a button", variant: "primary" },
 };

@@ -1,13 +1,11 @@
 import { Button } from "./components/ui/button";
-import { Link } from "react-router-dom";
+import arr from "./assets/icons/log-out.svg";
 
 export function App() {
   return (
     <div>
-      <Button>Hello</Button>
-      <Button disabled={true}>Hello</Button>
-      <Button as={Link} to={"https://google.com"}>
-        Hello
+      <Button>
+        <img src={arr} /> Button Primary
       </Button>
     </div>
   );
