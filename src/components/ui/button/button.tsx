@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, ElementType, ReactNode } from "react";
+import { ComponentPropsWithRef, ElementType } from "react";
+import arr from "@/assets/icons/log-out.svg";
 
 import s from "./button.module.scss";
 import clsx from "clsx";
@@ -7,7 +8,7 @@ export type ButtonProps<T extends ElementType = "button"> = {
   as?: T;
   fullWidth?: boolean;
   variant?: "primary" | "secondary";
-  children: ReactNode;
+  icon?: boolean;
 } & ComponentPropsWithRef<T>;
 
 export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) => {
@@ -16,8 +17,8 @@ export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) 
     className,
     fullWidth,
     variant = "primary",
-
     children,
+    icon,
     ...rest
   } = props;
 
@@ -26,6 +27,7 @@ export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) 
       className={clsx(s.button, s[variant], fullWidth && s.fullWidth, className)}
       {...rest}
     >
+      {icon && <img src={arr} alt="icon" className={s.icon} />}
       {children}
     </Component>
   );
