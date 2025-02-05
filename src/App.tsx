@@ -1,9 +1,10 @@
-import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
 
 export function App() {
   return (
     <div>
-      <Button icon={true}>BUTTON</Button>
+      <Input placeholder="input" label="input" error={true} />
+      <Input placeholder="input" label="input" disabled={true} />
     </div>
   );
 }

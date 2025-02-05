@@ -12,5 +12,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const DefaultInput: Story = {
-  args: { children: "Input", disabled: false, variant: "text" },
+  args: { label: "input", placeholder: "input" },
+};
+
+export const DisabledInput: Story = {
+  args: { label: "input", placeholder: "input", disabled: true },
 };

@@ -1,4 +1,56 @@
+.main {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.inputBlock {
+  display: inline-flex;
+  flex-direction: column;
+  height: 60px;
+  width: 284px;
+}
+
+.label {
+  font-size: var(--font-size-s);
+  color: var(--color-dark-100);
+
+  &.disabled {
+    color: var(--color-dark-300);
+    cursor: not-allowed;
+  }
+}
+
 .input {
+  height: 36px;
+  font-size: var(--font-size-m);
+  outline: none;
   background: transparent;
-  border: 1px solid white;
+  padding-left: 12px;
+  border: 1px solid var(--color-dark-300);
+  border-top: none;
+  color: var(--color-dark-100);
+
+  &:hover:not(.disabled) {
+    background: var(--color-dark-700);
+    border: 1px solid var(--color-dark-100);
+    border-top: none;
+  }
+
+  &:active:not(.disabled) {
+    border: 1px solid var(--color-light-100);
+    border-top: none;
+  }
+
+  &:focus:not(:active, .disabled) {
+    border: 1px solid var(--color-info-700);
+    border-top: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:disabled::placeholder {
+    color: var(--color-dark-300);
+  }
 }
