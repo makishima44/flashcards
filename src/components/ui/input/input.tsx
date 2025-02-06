@@ -1,7 +1,10 @@
-import { ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef, useState } from "react";
+import clsx from "clsx";
+
+import eye from "@/assets/icons/eye-outline.svg";
+import eyeDisabled from "@/assets/icons/eye-outline-disable.svg";
 
 import s from "./input.module.scss";
-import clsx from "clsx";
 
 export type InputProps = {
   label?: string;
@@ -10,25 +13,61 @@ export type InputProps = {
 } & ComponentPropsWithRef<"input">;
 
 export const Input = (props: InputProps) => {
-  const { label, className, error, disabled, ...rest } = props;
+  const { label, className, error, disabled, variant, ...rest } = props;
 
-  const inputClass = clsx(s.input, disabled && s.disabled, error && s.error, className);
+  const [isVisible, setIsVisible] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const inputType = variant === "password" ? (isVisible ? "text" : "password") : "text";
+  const inputClass = clsx(
+    s.input,
+    variant === "password" && s.password,
+    error && s.error,
+    className
+  );
   const labelClass = clsx(s.label, disabled && s.disabled);
-  const inputId = `input-${Math.random().toString(36).substr(2, 9)}`;
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value.trim());
+  };
 
   return (
     <div className={s.main}>
       <div className={s.inputBlock}>
         {label && (
-          <label className={labelClass} htmlFor={inputId}>
+          <label className={labelClass} htmlFor={"input"}>
             {label}
           </label>
         )}
 
-        <input id={inputId} className={inputClass} disabled={disabled} {...rest}></input>
+        <div className={s.inputWrapper}>
+          <input
+            value={inputValue}
+            type={inputType}
+            id={"input"}
+            className={inputClass}
+            disabled={disabled}
+            onChange={handleInputChange}
+            {...rest}
+          />
+
+          {variant === "password" && (
+            <button
+              disabled={disabled}
+              type="button"
+              className={s.iconButton}
+              onClick={() => setIsVisible(!isVisible)}
+            >
+              <img
+                src={disabled ? eyeDisabled : eye}
+                className={clsx(s.icon, disabled && s.disabledIcon)}
+              />
+            </button>
+          )}
+        </div>
       </div>
 
-      {error && <span className={s.errorText}>Error</span>}
+      {error && <span className={s.errorText}>Error!</span>}
     </div>
   );
 };

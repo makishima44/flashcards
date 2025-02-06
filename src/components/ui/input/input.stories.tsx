@@ -16,5 +16,32 @@ export const DefaultInput: Story = {
 };
 
 export const DisabledInput: Story = {
-  args: { label: "input", placeholder: "input", disabled: true },
+  args: { label: "input disabled", placeholder: "input", disabled: true },
+};
+
+export const ErrorInput: Story = {
+  args: { label: "input error", placeholder: "input", error: true },
+};
+
+export const DefaultPasswordInput: Story = {
+  args: { label: "input password", variant: "password", placeholder: "input" },
+};
+
+export const DisabledPasswordInput: Story = {
+  args: {
+    label: "input password disabled",
+    variant: "password",
+    placeholder: "input",
+    disabled: true,
+  },
+};
+
+export const ErrorPasswordInput: Story = {
+  args: {
+    value: "sdas",
+    label: "input password error",
+    variant: "password",
+    placeholder: "input",
+    error: true,
+  },
 };
