@@ -38,10 +38,22 @@ export const DisabledPasswordInput: Story = {
 
 export const ErrorPasswordInput: Story = {
   args: {
-    value: "sdas",
+    value: "sss",
     label: "input password error",
     variant: "password",
     placeholder: "input",
     error: true,
   },
+};
+
+export const DefaultSearchInput: Story = {
+  args: { variant: "search", placeholder: "input" },
+};
+
+export const DisabledSearchInput: Story = {
+  args: { variant: "search", placeholder: "input", disabled: true },
+};
+
+export const ErrorSearchInput: Story = {
+  args: { variant: "search", placeholder: "input", error: true },
 };
