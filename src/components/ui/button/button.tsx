@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType } from "react";
+import { ComponentPropsWithoutRef, ElementType } from "react";
 import arr from "@/assets/icons/log-out.svg";
 
 import s from "./button.module.scss";
@@ -9,7 +9,7 @@ export type ButtonProps<T extends ElementType = "button"> = {
   fullWidth?: boolean;
   variant?: "primary" | "secondary";
   icon?: boolean;
-} & ComponentPropsWithRef<T>;
+} & ComponentPropsWithoutRef<T>;
 
 export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) => {
   const {

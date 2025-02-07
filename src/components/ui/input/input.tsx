@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, useState } from "react";
+import { ComponentPropsWithoutRef, useState } from "react";
 
 import EyeIcon from "@/assets/icons/eye-icon.svg?react";
 import SearchIcon from "@/assets/icons/search-icon.svg?react";
@@ -11,7 +11,7 @@ export type InputProps = {
   error?: boolean;
   variant?: "password" | "search";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-} & ComponentPropsWithRef<"input">;
+} & ComponentPropsWithoutRef<"input">;
 
 export const Input = (props: InputProps) => {
   const { label, className, error, disabled, variant, onClick, ...rest } = props;
