@@ -1,0 +1,77 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.subtitle1,
+.subtitle2,
+.overline,
+.body1,
+.body2,
+.caption {
+  color: var(--color-light-100);
+  font-weight: var(--font-weight-bold);
+}
+
+.h3,
+.h4,
+.body1,
+.body2,
+.subtitle1,
+.subtitle2,
+.body1,
+.link1 {
+  line-height: var(--line-height-m);
+}
+
+.body1,
+.body2,
+.caption {
+  font-weight: var(--font-weight-regular);
+}
+
+.h1,
+.h2 {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-l);
+}
+
+.h2 {
+  font-size: var(--font-size-xl);
+}
+
+.h3 {
+  font-size: var(--font-size-l);
+}
+
+.h4 {
+  font-size: var(--font-size-m);
+}
+
+.body2 {
+  font-size: var(--font-size-m);
+}
+
+.body2,
+.subtitle2,
+.link1 {
+  font-size: var(--font-size-s);
+}
+
+.subtitle1 {
+  font-size: var(--font-size-m);
+}
+
+.caption,
+.overline,
+.link2 {
+  font-size: var(--font-size-xs);
+}
+
+.link1,
+.link2 {
+  color: var(--color-info-500);
+}
+
+.link2 {
+  line-height: var(--line-height-s);
+}
