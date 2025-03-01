@@ -7,9 +7,9 @@ import { forwardRef, useId } from "react";
 
 export type CheckboxProps = {
   label?: string;
-  checked: boolean;
+  checked?: boolean;
   disabled?: boolean;
-  onCheckedChange: (checked: boolean) => void;
+  onCheckedChange?: (checked: boolean) => void;
 } & React.ComponentPropsWithoutRef<"button">;
 
 export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
@@ -34,7 +34,7 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
 
         {label && (
           <label htmlFor={checkboxId} className={disabled ? `${s.label} ${s.disabled}` : s.label}>
-            <Typography variant="subtitle1" className={s.typography}>
+            <Typography variant="subtitle2" className={s.typography}>
               {label}
             </Typography>
           </label>
